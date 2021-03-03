@@ -17,7 +17,7 @@
             const text = element.textContent;
 
             if (mode === "number") {
-                return +text || text;
+                return +text || 0;
             }
             return [element, +text || text];
         }
@@ -49,9 +49,9 @@
                     dataByTeams[team_key] = {p1: [], x: [], p2: []}
                 }
 
-                dataByTeams[team_key].p1.push(p1)
-                dataByTeams[team_key].x.push(x)
-                dataByTeams[team_key].p2.push(p2)
+                p1 != 0 && dataByTeams[team_key].p1.push(p1);
+                x != 0 && dataByTeams[team_key].x.push(x);
+                p2 != 0 && dataByTeams[team_key].p2.push(p2);
             })
 
             rowsArray.forEach(row => {
@@ -102,6 +102,6 @@
 
     main();
 
-    alert("Helper was loaded! Click on any table to start!")
+    alert("Helper was loaded! Click on any table to start!");
 
 })();
