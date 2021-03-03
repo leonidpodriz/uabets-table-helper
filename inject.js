@@ -49,9 +49,9 @@
                     dataByTeams[team_key] = {p1: [], x: [], p2: []}
                 }
 
-                p1 != 0 && dataByTeams[team_key].p1.push(p1);
-                x != 0 && dataByTeams[team_key].x.push(x);
-                p2 != 0 && dataByTeams[team_key].p2.push(p2);
+                p1 !== 0 && dataByTeams[team_key].p1.push(p1);
+                x !== 0 && dataByTeams[team_key].x.push(x);
+                p2 !== 0 && dataByTeams[team_key].p2.push(p2);
             })
 
             rowsArray.forEach(row => {
