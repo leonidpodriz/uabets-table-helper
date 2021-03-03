@@ -70,19 +70,19 @@
                 let minX = Math.min(...dataByTeams[team_key].x);
 
                 if (p1 === maxP1) {
-                    p1Element.style.background = "green"
+                    p1Element.style.background = "#03f8fc"
                 } else if (p1 === minP1) {
                     p1Element.style.background = "orange"
                 }
 
                 if (p2 === maxP2) {
-                    p2Element.style.background = "green"
+                    p2Element.style.background = "#03f8fc"
                 } else if (p2 === minP2) {
                     p2Element.style.background = "orange"
                 }
 
                 if (x === maxX) {
-                    xElement.style.background = "green"
+                    xElement.style.background = "#03f8fc"
                 } else if (x === minX) {
                     xElement.style.background = "orange"
                 }
