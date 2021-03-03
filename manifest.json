@@ -1,0 +1,22 @@
+{
+  "name": "Bookmaker Helper",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Helpful extension to help work with Pinnacle tables!",
+  "homepage_url": "http://danharper.me",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Load helper!"
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "activeTab",
+    "tabs"
+  ]
+}
