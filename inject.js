@@ -1,6 +1,9 @@
 (function () {
 
     class Table {
+        maxIndicationColor = "#03f8fc";
+        minIndicationColor = "orange";
+
         constructor(tableElement) {
             this.element = tableElement;
         }
@@ -68,14 +71,36 @@
                 let p1 = this.getP1DetailsFromRow(row, "number");
                 let x = this.getXDetailsFromRow(row, "number");
                 let p2 = this.getP2DetailsFromRow(row, "number");
+                let handicap = this.getHandicapDetailsFromRow(row, "number");
+                let k1 = this.getK1DetailsFromRow(row, "number");
+                let k2 = this.getK2DetailsFromRow(row, "number");
+                let total = this.getTotalDetailsFromRow(row, "number");
+                let greater = this.getGreaterDetailsFromRow(row, "number");
+                let less = this.getLessDetailsFromRow(row, "number");
 
                 if (!dataByTeams[team_key]) {
-                    dataByTeams[team_key] = {p1: [], x: [], p2: []}
+                    dataByTeams[team_key] = {
+                        p1: [],
+                        x: [],
+                        p2: [],
+                        handicap: [],
+                        k1: [],
+                        k2: [],
+                        total: [],
+                        greater: [],
+                        less: []
+                    }
                 }
 
                 p1 !== 0 && dataByTeams[team_key].p1.push(p1);
                 x !== 0 && dataByTeams[team_key].x.push(x);
                 p2 !== 0 && dataByTeams[team_key].p2.push(p2);
+                handicap !== 0 && dataByTeams[team_key].handicap.push(handicap);
+                k1 !== 0 && dataByTeams[team_key].k1.push(k1);
+                k2 !== 0 && dataByTeams[team_key].k2.push(k2);
+                total !== 0 && dataByTeams[team_key].total.push(total);
+                greater !== 0 && dataByTeams[team_key].greater.push(greater);
+                less !== 0 && dataByTeams[team_key].less.push(less);
             })
 
             rowsArray.forEach(row => {
@@ -83,6 +108,12 @@
                 let [p1Element, p1] = this.getP1DetailsFromRow(row);
                 let [xElement, x] = this.getXDetailsFromRow(row);
                 let [p2Element, p2] = this.getP2DetailsFromRow(row);
+                let [handicapElement, handicap] = this.getHandicapDetailsFromRow(row);
+                let [k1Element, k1] = this.getK1DetailsFromRow(row);
+                let [k2Element, k2] = this.getK2DetailsFromRow(row);
+                let [totalElement, total] = this.getTotalDetailsFromRow(row);
+                let [greaterElement, greater] = this.getGreaterDetailsFromRow(row);
+                let [lessElement, less] = this.getLessDetailsFromRow(row);
 
                 let maxP1 = Math.max(...dataByTeams[team_key].p1);
                 let minP1 = Math.min(...dataByTeams[team_key].p1);
@@ -93,22 +124,76 @@
                 let maxX = Math.max(...dataByTeams[team_key].x);
                 let minX = Math.min(...dataByTeams[team_key].x);
 
+                let maxHandicap = Math.max(...dataByTeams[team_key].handicap);
+                let minHandicap = Math.min(...dataByTeams[team_key].handicap);
+
+                let maxK1 = Math.max(...dataByTeams[team_key].k1);
+                let minK1 = Math.min(...dataByTeams[team_key].k1);
+
+                let maxK2 = Math.max(...dataByTeams[team_key].k2);
+                let minK2 = Math.min(...dataByTeams[team_key].k2);
+
+                let maxTotal = Math.max(...dataByTeams[team_key].total);
+                let minTotal = Math.min(...dataByTeams[team_key].total);
+
+                let maxGreater = Math.max(...dataByTeams[team_key].greater);
+                let minGreater = Math.min(...dataByTeams[team_key].greater);
+
+                let maxLess = Math.max(...dataByTeams[team_key].less);
+                let minLess = Math.min(...dataByTeams[team_key].less);
+
                 if (p1 === maxP1) {
-                    p1Element.style.background = "#03f8fc"
+                    p1Element.style.background = this.maxIndicationColor;
                 } else if (p1 === minP1) {
-                    p1Element.style.background = "orange"
+                    p1Element.style.background = this.minIndicationColor;
                 }
 
                 if (p2 === maxP2) {
-                    p2Element.style.background = "#03f8fc"
+                    p2Element.style.background = this.maxIndicationColor;
                 } else if (p2 === minP2) {
-                    p2Element.style.background = "orange"
+                    p2Element.style.background = this.minIndicationColor;
                 }
 
                 if (x === maxX) {
-                    xElement.style.background = "#03f8fc"
+                    xElement.style.background = this.maxIndicationColor;
                 } else if (x === minX) {
-                    xElement.style.background = "orange"
+                    xElement.style.background = this.minIndicationColor;
+                }
+
+                if (handicap === maxHandicap) {
+                    handicapElement.style.background = this.maxIndicationColor;
+                } else if (x === minHandicap) {
+                    handicapElement.style.background = this.minIndicationColor;
+                }
+
+                if (k1 === maxK1) {
+                    k1Element.style.background = this.maxIndicationColor;
+                } else if (x === minX) {
+                    k1Element.style.background = this.minIndicationColor;
+                }
+
+                if (k2 === maxK2) {
+                    k2Element.style.background = this.maxIndicationColor;
+                } else if (x === minX) {
+                    k2Element.style.background = this.minIndicationColor;
+                }
+
+                if (total === maxTotal) {
+                    totalElement.style.background = this.maxIndicationColor;
+                } else if (x === minX) {
+                    totalElement.style.background = this.minIndicationColor;
+                }
+
+                if (greater === maxGreater) {
+                    greaterElement.style.background = this.maxIndicationColor;
+                } else if (x === minX) {
+                    greaterElement.style.background = this.minIndicationColor;
+                }
+
+                if (less === maxLess) {
+                    lessElement.style.background = this.maxIndicationColor;
+                } else if (x === minX) {
+                    lessElement.style.background = this.minIndicationColor;
                 }
             })
         }
