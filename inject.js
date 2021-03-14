@@ -109,9 +109,6 @@
                 let maxGreater = Math.max(...dataByTeams[team_key].greater);
                 let minGreater = Math.min(...dataByTeams[team_key].greater);
 
-                let maxLess = Math.max(...dataByTeams[team_key].less);
-                let minLess = Math.min(...dataByTeams[team_key].less);
-
                 if (p1 === maxP1) {
                     p1Element.style.background = this.maxIndicationColor;
                 } else if (p1 === minP1) {
