@@ -162,37 +162,37 @@
 
                 if (handicap === maxHandicap) {
                     handicapElement.style.background = this.maxIndicationColor;
-                } else if (x === minHandicap) {
+                } else if (handicap === minHandicap) {
                     handicapElement.style.background = this.minIndicationColor;
                 }
 
                 if (k1 === maxK1) {
                     k1Element.style.background = this.maxIndicationColor;
-                } else if (x === minX) {
+                } else if (k1 === minK1) {
                     k1Element.style.background = this.minIndicationColor;
                 }
 
                 if (k2 === maxK2) {
                     k2Element.style.background = this.maxIndicationColor;
-                } else if (x === minX) {
+                } else if (k2 === minK2) {
                     k2Element.style.background = this.minIndicationColor;
                 }
 
                 if (total === maxTotal) {
                     totalElement.style.background = this.maxIndicationColor;
-                } else if (x === minX) {
+                } else if (total === minTotal) {
                     totalElement.style.background = this.minIndicationColor;
                 }
 
                 if (greater === maxGreater) {
                     greaterElement.style.background = this.maxIndicationColor;
-                } else if (x === minX) {
+                } else if (greater === minGreater) {
                     greaterElement.style.background = this.minIndicationColor;
                 }
 
                 if (less === maxLess) {
                     lessElement.style.background = this.maxIndicationColor;
-                } else if (x === minX) {
+                } else if (less === minLess) {
                     lessElement.style.background = this.minIndicationColor;
                 }
             })
