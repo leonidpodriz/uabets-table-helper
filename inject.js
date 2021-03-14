@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     class Table {
         constructor(tableElement) {
@@ -32,6 +32,30 @@
 
         getP2DetailsFromRow(row, mode) {
             return this.getColumnDetailsFromRow(row, 6, mode);
+        }
+
+        getHandicapDetailsFromRow(row, mode) {
+            return this.getColumnDetailsFromRow(row, 7, mode);
+        }
+
+        getK1DetailsFromRow(row, mode) {
+            return this.getColumnDetailsFromRow(row, 8, mode);
+        }
+
+        getK2DetailsFromRow(row, mode) {
+            return this.getColumnDetailsFromRow(row, 9, mode);
+        }
+
+        getTotalDetailsFromRow(row, mode) {
+            return this.getColumnDetailsFromRow(row, 10, mode);
+        }
+
+        getGreaterDetailsFromRow(row, mode) {
+            return this.getColumnDetailsFromRow(row, 11, mode);
+        }
+
+        getLessDetailsFromRow(row, mode) {
+            return this.getColumnDetailsFromRow(row, 12, mode);
         }
 
         process() {
